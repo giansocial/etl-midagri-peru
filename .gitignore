@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Variables de entorno (credenciales de BD, API keys)
+.env
+*.env.local
+.env.production
+.env.staging
+
+# Datos crudos y procesados (muy grandes para git)
+data/raw/*
+data/processed/*
+data/warehouse/*
+data/quality/*
+data/quality_reports/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/warehouse/.gitkeep
+!data/quality/.gitkeep
+!data/quality_reports/.gitkeep
+
+# Archivos de datos (excepto fixtures de tests)
+*.csv
+*.xlsx
+*.xls
+*.parquet
+!tests/fixtures/*.csv
+
+# Logs
+logs/
+*.log
+
+# Testing y cobertura
+.coverage
+htmlcov/
+.pytest_cache/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Credenciales y secretos
+*.pem
+*.key
+credentials.json
+service_account.json
