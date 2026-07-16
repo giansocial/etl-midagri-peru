@@ -1,0 +1,16 @@
+departamento,cultivo,anio,mes,superficie_sembrada_ha,superficie_cosechada_ha,produccion_toneladas,rendimiento_kg_ha,precio_chacra_soles
+Arequipa,Arroz,2023,3,1200.5,1100.0,8800.0,8000.0,1.85
+Lima,Papa,2023,4,500.0,480.0,7200.0,15000.0,0.95
+Cusco,Quinua,2023,5,300.0,280.0,560.0,2000.0,4.50
+Junin,Cafe,2023,6,800.0,750.0,1125.0,1500.0,8.20
+Piura,Mango,2023,1,600.0,580.0,11600.0,20000.0,1.20
+La Libertad,Esparrago,2023,7,200.0,190.0,2280.0,12000.0,3.50
+Ica,Uva,2023,2,400.0,390.0,7800.0,20000.0,2.80
+Puno,Quinua,2023,4,1500.0,1400.0,2100.0,1500.0,4.20
+San Martin,Cafe,2023,5,2000.0,1900.0,2850.0,1500.0,7.90
+Lambayeque,Arroz,2023,3,3000.0,2900.0,20300.0,7000.0,1.90
+Arequipa,Papa,2023,4,400.0,380.0,6460.0,17000.0,0.80
+Lima,Arroz,2023,3,250.0,240.0,1680.0,7000.0,1.95
+Cusco,Papa,2023,5,800.0,750.0,9000.0,12000.0,0.85
+Junin,Papa,2023,4,600.0,570.0,9120.0,16000.0,0.90
+Piura,Platano,2023,1,1000.0,980.0,19600.0,20000.0,0.60
