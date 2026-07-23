@@ -151,6 +151,8 @@ Todos los datos provienen del Ministerio de Desarrollo Agrario y Riego:
 | SISAP | Sistema de Abastecimiento y Precios | 2010-2026 | [SIEA - Estadística Agropecuaria](https://siea.midagri.gob.pe/index.php/herramientas/estadistica-agropecuarias) |
 | SISAGRI_OTROS | Cultivos emergentes (arándano, palma, caña) | 2015-2026 | [SIEA - Estadística Agropecuaria](https://siea.midagri.gob.pe/index.php/herramientas/estadistica-agropecuarias) |
 
+| Descarga directa | Archivo Excel consolidado (Google Drive) | 2015-2026 | [Descargar datos MIDAGRI](https://drive.usercontent.google.com/download?id=1ajmiK9uIYlvPZwseRXh1ko3ivHKHufKm&export=download&authuser=0) |
+
 Portal: https://siea.midagri.gob.pe
 
 ## Licencia
@@ -213,6 +215,8 @@ All data comes from Peru's Ministry of Agrarian Development and Irrigation:
 | SISCOMEX | Agricultural Foreign Trade (SUNAT) | 2015-2026 | [SIEA Portal](https://siea.midagri.gob.pe/index.php/herramientas/estadistica-agropecuarias) |
 | SISAP | Supply and Pricing System | 2010-2026 | [SIEA Portal](https://siea.midagri.gob.pe/index.php/herramientas/estadistica-agropecuarias) |
 | SISAGRI_OTROS | Emerging crops (blueberry, palm, cane) | 2015-2026 | [SIEA Portal](https://siea.midagri.gob.pe/index.php/herramientas/estadistica-agropecuarias) |
+
+| Direct download | Consolidated Excel file (Google Drive) | 2015-2026 | [Download MIDAGRI data](https://drive.usercontent.google.com/download?id=1ajmiK9uIYlvPZwseRXh1ko3ivHKHufKm&export=download&authuser=0) |
 
 Portal: https://siea.midagri.gob.pe
 
