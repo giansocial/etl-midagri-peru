@@ -14,13 +14,29 @@ class DataAggregator(BaseTransformer):
         df: pd.DataFrame,
         depto_col: str = "departamento",
     ) -> pd.DataFrame:
-        agg = df.groupby(depto_col).agg(
-            produccion_total=("produccion_toneladas", "sum"),
-            superficie_total=("superficie_cosechada_ha", "sum"),
-            rendimiento_promedio=("rendimiento_kg_ha", "mean"),
-            precio_promedio=("precio_chacra_soles", "mean"),
-            num_cultivos=("cultivo", "nunique"),
-        ).reset_index()
+        agg_cols = {
+            "produccion_total": ("produccion_toneladas", "sum"),
+            "num_cultivos": ("cultivo", "nunique"),
+        }
+
+        superficie_col = (
+            "superficie_cosechada_ha" if "superficie_cosechada_ha" in df.columns
+            else "superficie_cosechada"
+        )
+        if superficie_col in df.columns:
+            agg_cols["superficie_total"] = (superficie_col, "sum")
+
+        rendimiento_col = (
+            "rendimiento_kg_ha" if "rendimiento_kg_ha" in df.columns
+            else "rendimiento_calculado"
+        )
+        if rendimiento_col in df.columns:
+            agg_cols["rendimiento_promedio"] = (rendimiento_col, "mean")
+
+        if "precio_chacra_soles" in df.columns:
+            agg_cols["precio_promedio"] = ("precio_chacra_soles", "mean")
+
+        agg = df.groupby(depto_col).agg(**agg_cols).reset_index()
 
         agg = agg.round(2)
         self.logger.info(f"Agregacion por region: {len(agg)} departamentos")
@@ -31,15 +47,33 @@ class DataAggregator(BaseTransformer):
         df: pd.DataFrame,
         cultivo_col: str = "cultivo",
     ) -> pd.DataFrame:
-        agg = df.groupby(cultivo_col).agg(
-            produccion_total=("produccion_toneladas", "sum"),
-            superficie_total=("superficie_cosechada_ha", "sum"),
-            rendimiento_promedio=("rendimiento_kg_ha", "mean"),
-            precio_min=("precio_chacra_soles", "min"),
-            precio_max=("precio_chacra_soles", "max"),
-            precio_promedio=("precio_chacra_soles", "mean"),
-            num_departamentos=("departamento", "nunique"),
-        ).reset_index()
+        agg_cols = {
+            "produccion_total": ("produccion_toneladas", "sum"),
+        }
+
+        superficie_col = (
+            "superficie_cosechada_ha" if "superficie_cosechada_ha" in df.columns
+            else "superficie_cosechada"
+        )
+        if superficie_col in df.columns:
+            agg_cols["superficie_total"] = (superficie_col, "sum")
+
+        rendimiento_col = (
+            "rendimiento_kg_ha" if "rendimiento_kg_ha" in df.columns
+            else "rendimiento_calculado"
+        )
+        if rendimiento_col in df.columns:
+            agg_cols["rendimiento_promedio"] = (rendimiento_col, "mean")
+
+        if "precio_chacra_soles" in df.columns:
+            agg_cols["precio_min"] = ("precio_chacra_soles", "min")
+            agg_cols["precio_max"] = ("precio_chacra_soles", "max")
+            agg_cols["precio_promedio"] = ("precio_chacra_soles", "mean")
+
+        if "departamento" in df.columns:
+            agg_cols["num_departamentos"] = ("departamento", "nunique")
+
+        agg = df.groupby(cultivo_col).agg(**agg_cols).reset_index()
 
         agg = agg.round(2)
         self.logger.info(f"Agregacion por cultivo: {len(agg)} cultivos")
