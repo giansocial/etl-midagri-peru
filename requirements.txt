@@ -8,9 +8,5 @@ unidecode==1.4.0
 psycopg2-binary==2.9.10
 sqlalchemy==2.0.41
 python-dotenv==1.1.1
-schedule==1.2.2
 pytest==8.4.1
 pytest-cov==6.2.1
-faker==37.3.0
-matplotlib==3.10.3
-seaborn==0.13.2
