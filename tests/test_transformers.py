@@ -79,6 +79,12 @@ class TestDataCleaner:
         result = cleaner.remove_out_of_range(df, {"produccion": (0, 400000)})
         assert len(result) == 3
 
+    def test_fill_nulls_no_muta_original(self, cleaner):
+        df = pd.DataFrame({"precio": [1.5, None, 3.0]})
+        original_null_count = df["precio"].isna().sum()
+        cleaner.fill_nulls(df, {"precio": 0.0})
+        assert df["precio"].isna().sum() == original_null_count
+
 
 class TestDataNormalizer:
     def test_transform_strips_and_title_cases(self, normalizer):

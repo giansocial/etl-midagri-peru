@@ -10,7 +10,6 @@ from src.transform.normalizer import DataNormalizer
 from src.transform.enricher import DataEnricher
 from src.transform.aggregator import DataAggregator
 from src.quality.validators import validate_dataset
-from src.quality.profiler import profile_dataset
 from src.quality.reporter import save_quality_report, print_quality_summary
 from src.load.export_loader import ExportLoader
 from src.utils.logger import setup_logger

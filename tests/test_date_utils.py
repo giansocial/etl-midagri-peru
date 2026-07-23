@@ -23,6 +23,12 @@ class TestGetCampanaAgricola:
     def test_julio_campana_anterior(self):
         assert get_campana_agricola(2024, 7) == "2023-2024"
 
+    def test_mes_cero_retorna_vacio(self):
+        assert get_campana_agricola(2023, 0) == ""
+
+    def test_mes_invalido_retorna_vacio(self):
+        assert get_campana_agricola(2023, 13) == ""
+
 
 class TestEpocas:
     @pytest.mark.parametrize("mes", [8, 9, 10, 11, 12, 1])

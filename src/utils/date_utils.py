@@ -3,6 +3,8 @@ from typing import List, Tuple
 
 
 def get_campana_agricola(anio: int, mes: int) -> str:
+    if mes < 1 or mes > 12:
+        return ""
     if mes >= 8:
         return f"{anio}-{anio + 1}"
     return f"{anio - 1}-{anio}"

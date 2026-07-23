@@ -1,15 +1,24 @@
+import re
 from typing import List, Optional
 import pandas as pd
 from sqlalchemy import text
 from src.load.base_loader import BaseLoader
 from src.config.database import get_engine
 
+VALID_TABLE_PATTERN = re.compile(r"^[a-z_][a-z0-9_]*$")
+
 
 class WarehouseLoader(BaseLoader):
     def __init__(self):
         super().__init__("warehouse")
 
+    def _validate_table_name(self, table_name: str) -> str:
+        if not VALID_TABLE_PATTERN.match(table_name):
+            raise ValueError(f"Nombre de tabla invalido: {table_name}")
+        return table_name
+
     def load(self, df: pd.DataFrame, table_name: str) -> int:
+        self._validate_table_name(table_name)
         engine = get_engine()
         rows = df.to_sql(
             table_name,
@@ -29,6 +38,7 @@ class WarehouseLoader(BaseLoader):
         table_name: str,
         key_columns: List[str],
     ) -> int:
+        self._validate_table_name(table_name)
         engine = get_engine()
         inserted = 0
 
@@ -57,6 +67,7 @@ class WarehouseLoader(BaseLoader):
         return inserted
 
     def truncate_and_load(self, df: pd.DataFrame, table_name: str) -> int:
+        self._validate_table_name(table_name)
         engine = get_engine()
         with engine.begin() as conn:
             conn.execute(text(f"TRUNCATE TABLE {table_name} RESTART IDENTITY CASCADE"))

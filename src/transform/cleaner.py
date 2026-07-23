@@ -39,6 +39,7 @@ class DataCleaner(BaseTransformer):
         df: pd.DataFrame,
         fill_map: Dict[str, any],
     ) -> pd.DataFrame:
+        df = df.copy()
         for col, value in fill_map.items():
             if col in df.columns:
                 null_count = df[col].isna().sum()
@@ -52,6 +53,7 @@ class DataCleaner(BaseTransformer):
         df: pd.DataFrame,
         type_map: Dict[str, str],
     ) -> pd.DataFrame:
+        df = df.copy()
         for col, dtype in type_map.items():
             if col not in df.columns:
                 continue
