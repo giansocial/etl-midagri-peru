@@ -8,9 +8,9 @@ Lo que hice fue construir un pipeline ETL que extrae esas 5 fuentes oficiales (4
 
 El resultado: análisis cruzados que antes no existían. Cuantifiqué que cada evento El Niño le cuesta al agro entre S/. 2,800 y 4,200 millones. Identifiqué que el arándano creció 93x en 8 años (de USD 15M a USD 1,400M) y que si el ritmo se mantiene, las agroexportaciones superarían USD 15,000M al 2026. Detecté un diferencial de precios estacional del 45-70% en papa que representa una oportunidad concreta para programas de almacenamiento que hoy no existen a escala.
 
-Este proyecto no es un ejercicio académico. Está construido con las mismas prácticas que se usan en producción: arquitectura medallion (Bronze/Silver/Gold), 63 tests automatizados, validación de calidad de datos, esquema estrella normalizado y un pipeline reproducible que se ejecuta con un solo comando. Todo sobre data real y verificable del ministerio.
+Todo corre con un solo comando, tiene 63 tests y usa exclusivamente data real del ministerio. Nada de CSVs inventados ni datasets de Kaggle.
 
-Si te interesa ver cómo se construye un pipeline de datos de principio a fin sobre fuentes oficiales, el código está aquí. Si quieres hablar sobre cómo la ingeniería de datos puede transformar información pública en decisiones estratégicas, escríbeme.
+Si quieres ver cómo armé el pipeline completo o tienes ideas sobre qué más se puede cruzar con esta data, el código está acá.
 
 ## Datos: 5 fuentes oficiales, 4,700,000+ registros
 
@@ -185,9 +185,9 @@ What I built is an ETL pipeline that extracts those 5 official sources (4,700,00
 
 The result: cross-dataset analyses that did not exist before. I quantified that each El Niño event costs agriculture between PEN 2,800 and 4,200 million. I identified that blueberry exports grew 93x in 8 years (from USD 15M to USD 1,400M) and that if the pace holds, agro-exports would surpass USD 15B by 2026. I detected a seasonal price spread of 45-70% in potato that represents a concrete opportunity for storage programs that do not yet exist at scale.
 
-This project is not an academic exercise. It is built with production-grade practices: medallion architecture (Bronze/Silver/Gold), 63 automated tests, data quality validation, normalized star schema, and a reproducible pipeline that runs with a single command. All on real, verifiable ministry data.
+The whole thing runs with a single command, has 63 tests, and uses exclusively real ministry data. No made-up CSVs or Kaggle datasets.
 
-If you want to see how a data pipeline is built end-to-end on official sources, the code is here. If you want to discuss how data engineering can transform public information into strategic decisions, reach out.
+If you want to see how the full pipeline works or have ideas about what else this data can reveal, the code is right here.
 
 ## Data: 5 official sources, 4,700,000+ records
 
