@@ -155,6 +155,16 @@ Todos los datos provienen del Ministerio de Desarrollo Agrario y Riego:
 
 Portal: https://siea.midagri.gob.pe
 
+## Visualizaciones
+
+Resultados del analisis exploratorio (notebook completo en `notebooks/`):
+
+![Produccion agricola por departamento - Top 10](docs/images/grafico_01.png)
+
+![Estacionalidad de la produccion agricola mensual](docs/images/grafico_02.png)
+
+![Rendimiento por hectarea vs superficie cosechada](docs/images/grafico_03.png)
+
 ## Licencia
 
 MIT License - ver [LICENSE](LICENSE)
