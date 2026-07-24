@@ -9,6 +9,7 @@ psycopg2-binary==2.9.10
 sqlalchemy==2.0.41
 matplotlib==3.10.3
 seaborn==0.13.2
+plotly==6.1.2
 python-dotenv==1.1.1
 pytest==8.4.1
 pytest-cov==6.2.1
